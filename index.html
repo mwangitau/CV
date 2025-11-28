@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>John Gitau - Data & Operations Analyst | CV</title>
   <meta name="description" content="Data & Operations Analyst with BSc in Applied Statistics & IT. Building ERP-backed dashboards and streamlining multi-station operations.">
   <meta name="keywords" content="Data Analyst, Operations Analyst, Statistics, Python, R, SQL, ERP">
@@ -41,7 +41,7 @@
       background: var(--background);
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
       border-radius: 12px;
-      overflow: hidden;
+      overflow: visible;
       animation: slideIn 0.6s ease-out;
     }
 
@@ -475,26 +475,155 @@
         font-size: 1.2rem;
       }
 
+      .header .summary {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+
       .content {
         padding: 20px;
+      }
+
+      .section {
+        margin-bottom: 30px;
       }
 
       .section-title {
         font-size: 1.5rem;
       }
 
+      .experience-item {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
       .experience-header {
         flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .job-title {
+        font-size: 1.2rem;
+      }
+
+      .company {
+        font-size: 1rem;
+        margin-bottom: 10px;
+      }
+
+      .date-range {
+        align-self: flex-start;
+        margin-top: 5px;
+      }
+
+      .achievements {
+        margin-top: 10px;
+      }
+
+      .achievements li {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+        padding-left: 20px;
       }
 
       .contact-bar {
         flex-direction: column;
         gap: 15px;
+        align-items: center;
+      }
+
+      .contact-item {
+        font-size: 0.9rem;
       }
 
       .skills-grid,
       .reference-grid {
         grid-template-columns: 1fr;
+      }
+
+      .skill-category {
+        padding: 20px;
+      }
+
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+      }
+
+      .education-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .education-item .year {
+        margin-top: 10px;
+      }
+
+      .reference-card {
+        padding: 20px;
+      }
+
+      /* Ensure all sections are visible on mobile */
+      .section,
+      .experience-item,
+      .skill-category,
+      .education-item,
+      .cert-item,
+      .reference-card {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    /* Extra small devices */
+    @media (max-width: 480px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .header .tagline {
+        font-size: 1.1rem;
+      }
+
+      .header .summary {
+        font-size: 0.95rem;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      .job-title {
+        font-size: 1.1rem;
+      }
+
+      .company {
+        font-size: 0.95rem;
+      }
+
+      .achievements li {
+        font-size: 0.9rem;
+      }
+
+      .content {
+        padding: 15px;
+      }
+
+      .experience-item {
+        padding: 15px;
       }
     }
 
@@ -541,9 +670,9 @@
             <i class="fas fa-phone"></i>
             +254 717 034 328
           </a>
-          <a href="mailto:mwangijohngitau1@gmail.com" class="contact-item">
+          <a href="/cdn-cgi/l/email-protection#99f4eef8f7fef0f3f6f1f7fef0edf8eca8d9fef4f8f0f5b7faf6f4" class="contact-item">
             <i class="fas fa-envelope"></i>
-            mwangijohngitau1@gmail.com
+            <span class="__cf_email__" data-cfemail="cba6bcaaa5aca2a1a4a3a5aca2bfaabefa8baca6aaa2a7e5a8a4a6">[email&#160;protected]</span>
           </a>
           <a href="https://www.linkedin.com/in/johnmwangi-09b482113" target="_blank" class="contact-item">
             <i class="fab fa-linkedin"></i>
@@ -569,7 +698,7 @@
           <i class="fas fa-download"></i>
           Download CV
         </a>
-        <a href="mailto:mwangijohngitau1@gmail.com" class="btn btn-secondary">
+        <a href="/cdn-cgi/l/email-protection#d5b8a2b4bbb2bcbfbabdbbb2bca1b4a0e495b2b8b4bcb9fbb6bab8" class="btn btn-secondary">
           <i class="fas fa-envelope"></i>
           Contact Me
         </a>
@@ -724,7 +853,6 @@
             <div class="skill-tags">
               <span class="skill-tag">Asana</span>
               <span class="skill-tag">ERP</span>
-              <span class="skill-tag">Google Workspace</span>
               <span class="skill-tag">Microsoft Office</span>
             </div>
           </div>
@@ -819,7 +947,22 @@
           <i class="fas fa-users"></i>
           References
         </h2>
-        
+
+        <div class="reference-grid">
+          <div class="reference-card">
+            <h3>Mr Francis Njau</h3>
+            <div class="title">Employer</div>
+            <div class="company">FNWA Energy Ltd</div>
+            <div class="contact">
+              <i class="fas fa-phone"></i>
+              +254 721 798 839
+            </div>
+            <div class="contact">
+              <i class="fas fa-envelope"></i>
+              <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f09e9a91859e999b9b83c7c9b0979d91999cde939f9d">[email&#160;protected]</a>
+            </div>
+          </div>
+
           <div class="reference-card">
             <h3>Mr John Njoroge</h3>
             <div class="title">Employer</div>
@@ -830,7 +973,7 @@
             </div>
             <div class="contact">
               <i class="fas fa-envelope"></i>
-              johnnjoroge844@gmail.com
+              <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c060304020206031e030b095458582c0b010d0500420f0301">[email&#160;protected]</a>
             </div>
           </div>
 
@@ -844,22 +987,7 @@
             </div>
             <div class="contact">
               <i class="fas fa-envelope"></i>
-              sapima@kafu.ac.ke
-            </div>
-          </div>
-
-         <div class="reference-grid">
-          <div class="reference-card">
-            <h3>Mr Francis Njau</h3>
-            <div class="title">Employer</div>
-            <div class="company">FNWA Energy Ltd</div>
-            <div class="contact">
-              <i class="fas fa-phone"></i>
-              +254 721 798 839
-            </div>
-            <div class="contact">
-              <i class="fas fa-envelope"></i>
-              njaunikks79@gmail.com
+              <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3b485a4b52565a7b505a5d4e155a5815505e">[email&#160;protected]</a>
             </div>
           </div>
 
@@ -873,7 +1001,7 @@
             </div>
             <div class="contact">
               <i class="fas fa-envelope"></i>
-              director.nri@kalro.org
+              <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83e7eaf1e6e0f7ecf1adedf1eac3e8e2eff1ecadecf1e4">[email&#160;protected]</a>
             </div>
           </div>
 
@@ -887,7 +1015,7 @@
             </div>
             <div class="contact">
               <i class="fas fa-envelope"></i>
-              stjohnmangu@gmail.com
+              <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a2d1d6c8cdcacccfc3ccc5d7e2c5cfc3cbce8cc1cdcf">[email&#160;protected]</a>
             </div>
           </div>
         </div>
@@ -906,7 +1034,7 @@
     </footer>
   </div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -922,35 +1050,4 @@
     });
 
     // Add fade-in animation on scroll
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-in').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-      observer.observe(el);
-    });
-
-    // Print functionality
-    window.addEventListener('beforeprint', () => {
-      document.body.style.background = 'white';
-    });
-
-    window.addEventListener('afterprint', () => {
-      document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-    });
-  </script>
-</body>
-</html>
+    const obs
