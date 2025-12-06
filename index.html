@@ -14,12 +14,12 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-            line-height: 1.6;
+            padding: 15px;
+            line-height: 1.4;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 850px;
             margin: 0 auto;
             background: white;
             box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
@@ -27,57 +27,62 @@
             overflow: hidden;
         }
 
-        /* Header Section */
+        /* Header Section - More Compact */
         .header {
             background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
             color: white;
-            padding: 40px;
+            padding: 25px 30px;
             position: relative;
         }
 
         .header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
+            font-size: 32px;
+            margin-bottom: 5px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .header h2 {
-            font-size: 22px;
+            font-size: 16px;
             font-weight: 300;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             opacity: 0.95;
         }
 
         .contact-info {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            font-size: 14px;
+            gap: 5px;
+            font-size: 11px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: underline;
         }
 
         /* Download Button */
         .download-btn {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             background: white;
             color: #0d9488;
-            padding: 12px 24px;
-            border-radius: 25px;
+            padding: 8px 16px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: 600;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .download-btn:hover {
@@ -86,95 +91,97 @@
             background: #f0fdfa;
         }
 
-        /* Content Sections */
+        /* Content Sections - More Compact */
         .content {
-            padding: 40px;
+            padding: 25px 30px;
         }
 
         .section {
-            margin-bottom: 35px;
+            margin-bottom: 20px;
         }
 
         .section-title {
-            font-size: 24px;
+            font-size: 16px;
             color: #0d9488;
             font-weight: 700;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #0d9488;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #0d9488;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
-        /* Profile */
+        /* Profile - Compact */
         .profile-text {
             color: #333;
-            line-height: 1.8;
+            line-height: 1.5;
             text-align: justify;
+            font-size: 11px;
         }
 
-        /* Competencies Grid */
+        /* Competencies Grid - Compact */
         .competencies-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 15px;
+            gap: 6px;
+            margin-top: 8px;
         }
 
         .competency-item {
             display: flex;
             align-items: center;
-            padding: 10px;
+            padding: 5px 8px;
             background: #f0fdfa;
-            border-left: 4px solid #14b8a6;
-            border-radius: 4px;
-            font-size: 14px;
+            border-left: 3px solid #14b8a6;
+            border-radius: 3px;
+            font-size: 10px;
             transition: all 0.3s ease;
         }
 
         .competency-item:hover {
             background: #ccfbf1;
-            transform: translateX(5px);
+            transform: translateX(3px);
         }
 
         .competency-icon {
             color: #0d9488;
             font-weight: bold;
-            margin-right: 10px;
+            margin-right: 6px;
+            font-size: 10px;
         }
 
-        /* Job Experience */
+        /* Job Experience - Very Compact */
         .job {
-            margin-bottom: 30px;
-            padding: 20px;
+            margin-bottom: 15px;
+            padding: 12px;
             background: #f9fafb;
-            border-radius: 8px;
-            border-left: 5px solid #14b8a6;
+            border-radius: 6px;
+            border-left: 4px solid #14b8a6;
         }
 
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: start;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             flex-wrap: wrap;
         }
 
         .job-title {
-            font-size: 18px;
+            font-size: 13px;
             font-weight: 700;
             color: #1f2937;
         }
 
         .job-company {
-            font-size: 14px;
+            font-size: 11px;
             color: #0d9488;
             font-weight: 600;
-            margin-top: 5px;
+            margin-top: 2px;
         }
 
         .job-date {
-            font-size: 14px;
+            font-size: 11px;
             color: #6b7280;
             font-weight: 600;
             white-space: nowrap;
@@ -182,15 +189,16 @@
 
         .job-bullets {
             list-style: none;
-            margin-top: 15px;
+            margin-top: 6px;
         }
 
         .job-bullets li {
-            padding-left: 25px;
-            margin-bottom: 10px;
+            padding-left: 15px;
+            margin-bottom: 4px;
             position: relative;
             color: #374151;
-            line-height: 1.6;
+            line-height: 1.4;
+            font-size: 10px;
         }
 
         .job-bullets li:before {
@@ -199,72 +207,73 @@
             left: 0;
             color: #14b8a6;
             font-weight: bold;
+            font-size: 10px;
         }
 
         .job-bullets strong {
             color: #0d9488;
         }
 
-        /* Skills Table */
+        /* Skills Table - Compact */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 15px;
+            gap: 10px;
+            margin-top: 8px;
         }
 
         .skill-category {
-            padding: 15px;
+            padding: 8px;
             background: #f0fdfa;
-            border-radius: 8px;
-            border-top: 3px solid #14b8a6;
+            border-radius: 4px;
+            border-top: 2px solid #14b8a6;
         }
 
         .skill-category h4 {
             color: #0d9488;
-            font-size: 16px;
-            margin-bottom: 8px;
+            font-size: 11px;
+            margin-bottom: 4px;
         }
 
         .skill-category p {
             color: #4b5563;
-            font-size: 14px;
-            line-height: 1.5;
+            font-size: 9px;
+            line-height: 1.4;
         }
 
-        /* Education */
+        /* Education - Compact */
         .education-item {
-            margin-bottom: 15px;
-            padding: 15px;
+            margin-bottom: 8px;
+            padding: 8px;
             background: #f9fafb;
-            border-radius: 6px;
-            border-left: 4px solid #14b8a6;
+            border-radius: 4px;
+            border-left: 3px solid #14b8a6;
         }
 
         .education-item h4 {
-            font-size: 16px;
+            font-size: 11px;
             color: #1f2937;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
 
         .education-item p {
             color: #6b7280;
-            font-size: 14px;
+            font-size: 10px;
         }
 
-        /* Certifications */
+        /* Certifications - Compact */
         .cert-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 15px;
+            gap: 6px;
+            margin-top: 8px;
         }
 
         .cert-item {
-            padding: 12px;
+            padding: 6px 8px;
             background: #f0fdfa;
-            border-radius: 6px;
-            font-size: 13px;
+            border-radius: 4px;
+            font-size: 9px;
             display: flex;
             align-items: center;
             color: #374151;
@@ -274,23 +283,23 @@
             content: "✓";
             color: #14b8a6;
             font-weight: bold;
-            margin-right: 10px;
-            font-size: 16px;
+            margin-right: 6px;
+            font-size: 11px;
         }
 
-        /* Footer */
+        /* Footer - Compact */
         .footer {
             background: #f9fafb;
-            padding: 20px 40px;
+            padding: 12px 30px;
             text-align: center;
             border-top: 2px solid #e5e7eb;
         }
 
         .footer p {
             color: #6b7280;
-            font-size: 14px;
+            font-size: 10px;
             font-style: italic;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .footer .availability {
@@ -322,22 +331,35 @@
             .section {
                 page-break-inside: avoid;
             }
+
+            .section {
+                margin-bottom: 15px;
+            }
+
+            .job {
+                margin-bottom: 12px;
+                padding: 10px;
+            }
+
+            .content {
+                padding: 20px 25px;
+            }
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 28px;
+                font-size: 24px;
             }
 
             .header h2 {
-                font-size: 16px;
+                font-size: 14px;
             }
 
             .download-btn {
                 position: static;
                 display: block;
-                margin: 20px auto 0;
+                margin: 15px auto 0;
                 width: fit-content;
             }
 
@@ -346,7 +368,7 @@
             }
 
             .content {
-                padding: 20px;
+                padding: 15px;
             }
 
             .competencies-grid,
@@ -360,7 +382,7 @@
             }
 
             .job-date {
-                margin-top: 5px;
+                margin-top: 4px;
             }
         }
     </style>
@@ -377,7 +399,7 @@
                 <div class="contact-item">📧 mwangijohngitau1@gmail.com</div>
                 <div class="contact-item">🔗 linkedin.com/in/john-mwangi-09b482113</div>
                 <div class="contact-item">💻 github.com/mwangitau</div>
-                <div class="contact-item">🔗https://mwangitau.github.io/CV/</div>
+                <div class="contact-item">🌐 <a href="https://mwangitau.github.io/RESUME/" target="_blank">mwangitau.github.io/RESUME</a></div>
                 <div class="contact-item">📍 120-01004 Nairobi, KENYA</div>
             </div>
         </div>
