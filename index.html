@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Gitau Mwangi - Workforce Planning Specialist</title>
+    <title>ATS-Friendly Resume Templates | Free Download</title>
     <style>
         * {
             margin: 0;
@@ -13,583 +13,265 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 15px;
-            line-height: 1.4;
+            line-height: 1.6;
+            color: #333;
+            background: #000000;
+            min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
-            max-width: 850px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            overflow: hidden;
         }
 
-        /* Header Section - More Compact */
-        .header {
-            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+        header {
+            text-align: center;
             color: white;
-            padding: 25px 30px;
-            position: relative;
+            padding: 40px 20px;
+            margin-bottom: 40px;
         }
 
-        .header h1 {
-            font-size: 32px;
-            margin-bottom: 5px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .header h2 {
-            font-size: 16px;
-            font-weight: 300;
-            margin-bottom: 12px;
+        header p {
+            font-size: 1.2em;
             opacity: 0.95;
         }
 
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 5px;
-            font-size: 11px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        /* Download Button */
-        .download-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
+        .intro-section {
             background: white;
-            color: #0d9488;
-            padding: 8px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 12px;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            background: #f0fdfa;
+        .intro-section h2 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
         }
 
-        /* Content Sections - More Compact */
-        .content {
-            padding: 25px 30px;
+        .intro-section ul {
+            margin-left: 20px;
+            margin-top: 10px;
         }
 
-        .section {
+        .intro-section li {
+            margin-bottom: 8px;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .template-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .template-card h3 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .template-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .template-features {
+            list-style: none;
             margin-bottom: 20px;
         }
 
-        .section-title {
-            font-size: 16px;
-            color: #0d9488;
-            font-weight: 700;
-            margin-bottom: 8px;
-            padding-bottom: 4px;
-            border-bottom: 2px solid #0d9488;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .template-features li {
+            padding: 5px 0;
+            color: #555;
+            font-size: 0.9em;
         }
 
-        /* Profile - Compact */
-        .profile-text {
-            color: #333;
-            line-height: 1.5;
-            text-align: justify;
-            font-size: 11px;
-        }
-
-        /* Competencies Grid - Compact */
-        .competencies-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6px;
-            margin-top: 8px;
-        }
-
-        .competency-item {
-            display: flex;
-            align-items: center;
-            padding: 5px 8px;
-            background: #f0fdfa;
-            border-left: 3px solid #14b8a6;
-            border-radius: 3px;
-            font-size: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .competency-item:hover {
-            background: #ccfbf1;
-            transform: translateX(3px);
-        }
-
-        .competency-icon {
-            color: #0d9488;
+        .template-features li:before {
+            content: "✓ ";
+            color: #1a1a1a;
             font-weight: bold;
-            margin-right: 6px;
-            font-size: 10px;
+            margin-right: 5px;
         }
 
-        /* Job Experience - Very Compact */
-        .job {
-            margin-bottom: 15px;
-            padding: 12px;
-            background: #f9fafb;
-            border-radius: 6px;
-            border-left: 4px solid #14b8a6;
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 6px;
-            flex-wrap: wrap;
-        }
-
-        .job-title {
-            font-size: 13px;
-            font-weight: 700;
-            color: #1f2937;
-        }
-
-        .job-company {
-            font-size: 11px;
-            color: #0d9488;
-            font-weight: 600;
-            margin-top: 2px;
-        }
-
-        .job-date {
-            font-size: 11px;
-            color: #6b7280;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .job-bullets {
-            list-style: none;
-            margin-top: 6px;
-        }
-
-        .job-bullets li {
-            padding-left: 15px;
-            margin-bottom: 4px;
-            position: relative;
-            color: #374151;
-            line-height: 1.4;
-            font-size: 10px;
-        }
-
-        .job-bullets li:before {
-            content: "●";
-            position: absolute;
-            left: 0;
-            color: #14b8a6;
-            font-weight: bold;
-            font-size: 10px;
-        }
-
-        .job-bullets strong {
-            color: #0d9488;
-        }
-
-        /* Skills Table - Compact */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 8px;
-        }
-
-        .skill-category {
-            padding: 8px;
-            background: #f0fdfa;
-            border-radius: 4px;
-            border-top: 2px solid #14b8a6;
-        }
-
-        .skill-category h4 {
-            color: #0d9488;
-            font-size: 11px;
-            margin-bottom: 4px;
-        }
-
-        .skill-category p {
-            color: #4b5563;
-            font-size: 9px;
-            line-height: 1.4;
-        }
-
-        /* Education - Compact */
-        .education-item {
-            margin-bottom: 8px;
-            padding: 8px;
-            background: #f9fafb;
-            border-radius: 4px;
-            border-left: 3px solid #14b8a6;
-        }
-
-        .education-item h4 {
-            font-size: 11px;
-            color: #1f2937;
-            margin-bottom: 2px;
-        }
-
-        .education-item p {
-            color: #6b7280;
-            font-size: 10px;
-        }
-
-        /* Certifications - Compact */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6px;
-            margin-top: 8px;
-        }
-
-        .cert-item {
-            padding: 6px 8px;
-            background: #f0fdfa;
-            border-radius: 4px;
-            font-size: 9px;
-            display: flex;
-            align-items: center;
-            color: #374151;
-        }
-
-        .cert-item:before {
-            content: "✓";
-            color: #14b8a6;
-            font-weight: bold;
-            margin-right: 6px;
-            font-size: 11px;
-        }
-
-        /* Footer - Compact */
-        .footer {
-            background: #f9fafb;
-            padding: 12px 30px;
+        .download-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 24px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
             text-align: center;
-            border-top: 2px solid #e5e7eb;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            border: 1px solid #333;
         }
 
-        .footer p {
-            color: #6b7280;
-            font-size: 10px;
-            font-style: italic;
-            margin-bottom: 4px;
+        .download-btn:hover {
+            background: #2a2a2a;
         }
 
-        .footer .availability {
-            color: #0d9488;
-            font-weight: 600;
-            font-style: normal;
+        .usage-guide {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        /* Print Styles */
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-
-            .container {
-                box-shadow: none;
-                max-width: 100%;
-            }
-
-            .download-btn {
-                display: none;
-            }
-
-            .job {
-                page-break-inside: avoid;
-            }
-
-            .section {
-                page-break-inside: avoid;
-            }
-
-            .section {
-                margin-bottom: 15px;
-            }
-
-            .job {
-                margin-bottom: 12px;
-                padding: 10px;
-            }
-
-            .content {
-                padding: 20px 25px;
-            }
+        .usage-guide h2 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
         }
 
-        /* Mobile Responsive */
+        .usage-guide ol {
+            margin-left: 20px;
+        }
+
+        .usage-guide li {
+            margin-bottom: 12px;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .contributors {
+            margin-top: 15px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 24px;
+            header h1 {
+                font-size: 2em;
             }
 
-            .header h2 {
-                font-size: 14px;
-            }
-
-            .download-btn {
-                position: static;
-                display: block;
-                margin: 15px auto 0;
-                width: fit-content;
-            }
-
-            .contact-info {
+            .templates-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .content {
-                padding: 15px;
-            }
-
-            .competencies-grid,
-            .skills-grid,
-            .cert-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .job-header {
-                flex-direction: column;
-            }
-
-            .job-date {
-                margin-top: 4px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <button class="download-btn" onclick="window.print()">📥 Download PDF</button>
-            <h1>JOHN GITAU MWANGI</h1>
-            <h2>Workforce Planning & Operations Analyst</h2>
-            <div class="contact-info">
-                <div class="contact-item">📞 +254 717 034 328</div>
-                <div class="contact-item">📧 mwangijohngitau1@gmail.com</div>
-                <div class="contact-item">🔗 linkedin.com/in/john-mwangi-09b482113</div>
-                <div class="contact-item">💻 github.com/mwangitau</div>
-                <div class="contact-item">🌐 <a href="https://mwangitau.github.io/RESUME/" target="_blank">mwangitau.github.io/RESUME</a></div>
-                <div class="contact-item">📍 120-01004 Nairobi, KENYA</div>
-            </div>
-        </div>
+        <header>
+            <h1>ATS-Friendly Resume Templates</h1>
+            <p>Professional, clean resume templates optimized for Applicant Tracking Systems</p>
+        </header>
 
-        <!-- Content -->
-        <div class="content">
-            <!-- Professional Profile -->
-            <div class="section">
-                <h3 class="section-title">Professional Profile</h3>
-                <p class="profile-text">
-                    Results-driven Workforce Planning & Operations Analyst with 5+ years of progressive experience 
-                    managing multi-site operations across multiple locations. Proven expertise in workforce allocation, 
-                    overtime management, data-driven scheduling, and compliance coordination. Skilled in leveraging ERP 
-                    systems and advanced analytics to optimize staffing levels, reduce labor costs by 10-15%, and improve 
-                    operational efficiency by up to 20%. Strong background in forecasting, reporting, and system implementation 
-                    across diverse operational environments.
-                </p>
-            </div>
+        <section class="intro-section">
+            <h2>Why ATS-Friendly Matters</h2>
+            <p>Over 90% of large companies use Applicant Tracking Systems (ATS) to filter resumes. A beautiful resume means nothing if it can't pass through ATS software. Our templates are specifically designed to:</p>
+            <ul>
+                <li>Pass ATS parsing with high accuracy</li>
+                <li>Use clean, semantic HTML structure</li>
+                <li>Feature standard section headings and formatting</li>
+                <li>Maintain professional appearance for human reviewers</li>
+                <li>Print perfectly to PDF format</li>
+            </ul>
+        </section>
 
-            <!-- Core Competencies -->
-            <div class="section">
-                <h3 class="section-title">Core Competencies</h3>
-                <div class="competencies-grid">
-                    <div class="competency-item"><span class="competency-icon">▸</span> Workforce Allocation & Deployment</div>
-                    <div class="competency-item"><span class="competency-icon">▸</span> Data Management & Reporting</div>
-                    <div class="competency-item"><span class="competency-icon">▸</span> Overtime & Leave Management</div>
-                    <div class="competency-item"><span class="competency-icon">▸</span> ERP Systems & Analytics Tools</div>
-                    <div class="competency-item"><span class="competency-icon">▸</span> Forecasting & Planning</div>
-                    <div class="competency-item"><span class="competency-icon">▸</span> Financial Acumen & Budget Control</div>
-                    <div class="competency-item"><span class="competency-icon">▸</span> Coordination & Compliance</div>
-                    <div class="competency-item"><span class="competency-icon">▸</span> Multi-location Operations</div>
-                    <div class="competency-item"><span class="competency-icon">▸</span> Analytical Skills & Problem Solving</div>
-                    <div class="competency-item"><span class="competency-icon">▸</span> Process Improvement & Automation</div>
-                </div>
+        <section class="templates-grid">
+            <div class="template-card">
+                <h3>Classic Professional</h3>
+                <p>Traditional resume format perfect for corporate environments and experienced professionals.</p>
+                <ul class="template-features">
+                    <li>Chronological layout</li>
+                    <li>Professional typography</li>
+                    <li>Clean section divisions</li>
+                    <li>Best for: Corporate jobs, Management</li>
+                </ul>
+                <a href="templates/classic-professional.html" download="ATS-Resume-Classic-Professional.html" class="download-btn">Download Template</a>
             </div>
 
-            <!-- Professional Experience -->
-            <div class="section">
-                <h3 class="section-title">Professional Experience</h3>
-
-                <!-- Job 1 -->
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">MANAGER | AUDITOR</div>
-                            <div class="job-company">Kiryan Energy Ltd - Shell Mangu Road | Kiambu, Kenya</div>
-                        </div>
-                        <div class="job-date">March 2024 - Present</div>
-                    </div>
-                    <ul class="job-bullets">
-                        <li><strong>Payroll & Workforce Analytics:</strong> Process payroll for 200+ employees integrating attendance, performance data, and leave management to reduce overtime costs by 10% and enhance labor productivity across multiple locations.</li>
-                        <li><strong>ERP Management & System Integration:</strong> Manage ERP systems for multiple outlets, improving data consistency and reporting speed by 30% through automated dashboards and integrated performance monitoring tools.</li>
-                        <li><strong>Cross-Station Performance Reporting:</strong> Consolidate data from all service stations to produce weekly and monthly performance dashboards, enabling management to benchmark operations and identify efficiency improvements of up to 20%.</li>
-                        <li><strong>Predictive Analytics & Forecasting:</strong> Apply predictive analytics to monitor inventory consumption trends, achieving 99% stock availability while reducing excess inventory by 12% through accurate demand forecasting.</li>
-                        <li><strong>Process Automation:</strong> Automate invoice verification and variance analysis using ERP tools, cutting billing errors by 30% and improving operational coordination across supply chain functions.</li>
-                        <li><strong>Financial & Operational Compliance:</strong> Maintain and analyze financial data across 3+ service stations, improving cash flow tracking accuracy by 20% and conducting daily/monthly reconciliations to reduce product losses by 15%.</li>
-                    </ul>
-                </div>
-
-                <!-- Job 2 -->
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">MANAGER | AUDITOR</div>
-                            <div class="job-company">FNWA Energy Ltd | Kirinyaga, Kenya</div>
-                        </div>
-                        <div class="job-date">May 2024 - March 2025</div>
-                    </div>
-                    <ul class="job-bullets">
-                        <li><strong>Workforce Planning & Allocation:</strong> Managed scheduling and deployment of 100+ employees across 6+ multi-site facilities, optimizing shift planning and staff allocation to reduce overtime costs by 10% while maintaining 100% service coverage.</li>
-                        <li><strong>Data-Driven Operations Management:</strong> Leveraged ERP analytics and performance tracking to oversee daily operations, improving workflow efficiency by 15% through predictive scheduling and real-time monitoring.</li>
-                        <li><strong>Financial Reporting & Compliance:</strong> Generated and consolidated weekly and monthly financial reports for service stations across 3 counties (Kiambu, Murang'a, Kirinyaga), ensuring 100% compliance with company policies and reducing reporting errors by 25%.</li>
-                        <li><strong>Forecasting & Inventory Analytics:</strong> Tracked daily sales and stock levels using ERP systems, identifying trends and discrepancies early to achieve 98% stock accuracy and support business growth strategies that boosted sales by 12%.</li>
-                        <li><strong>Audit & Process Improvement:</strong> Conducted internal operational audits, implemented cost-saving initiatives that enhanced profit margins by 8%, and ensured zero compliance penalties during statutory audits.</li>
-                    </ul>
-                </div>
-
-                <!-- Job 3 -->
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">QUALITY MARSHAL | STATION SUPERVISOR</div>
-                            <div class="job-company">Kiryan Energy Ltd - Joska Shell Service Station | Machakos, Kenya</div>
-                        </div>
-                        <div class="job-date">2022 - 2024</div>
-                    </div>
-                    <ul class="job-bullets">
-                        <li><strong>Team Leadership & Workforce Deployment:</strong> Led and coordinated a team of 60+ employees, optimizing workforce deployment and shift scheduling to achieve 15% increase in station efficiency and maintain service excellence standards.</li>
-                        <li><strong>Operational Reporting & Analytics:</strong> Produced weekly and monthly operational reports leveraging data analytics for resource allocation and strategic planning, enabling data-driven decision-making across multiple operational metrics.</li>
-                        <li><strong>Staff Training & Development:</strong> Conducted regular training sessions on operational procedures and safety protocols, enhancing team productivity and reducing safety incidents by 30%.</li>
-                        <li><strong>Performance Management:</strong> Surpassed 100% of monthly sales targets consistently and achieved over 90% positive rating in customer feedback through effective team coordination and performance monitoring.</li>
-                        <li><strong>Compliance & Safety Coordination:</strong> Ensured adherence to operational standards and safety regulations, reducing compliance issues by 15% through proactive monitoring and enforcement.</li>
-                    </ul>
-                </div>
-
-                <!-- Job 4 -->
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">STATISTICIAN (INTERNSHIP)</div>
-                            <div class="job-company">Kenya Agricultural and Livestock Research Institute | Kakamega, Kenya</div>
-                        </div>
-                        <div class="job-date">Sept 2021 - Dec 2021</div>
-                    </div>
-                    <ul class="job-bullets">
-                        <li><strong>Data Management & Quality Assurance:</strong> Streamlined data collection, entry, and cleaning processes, achieving 30% improvement in data quality for statistical analysis and reporting.</li>
-                        <li><strong>Advanced Statistical Analysis:</strong> Leveraged Excel, R, and SAS to perform complex data analyses, identifying key trends that informed strategic decisions and research methodologies.</li>
-                        <li><strong>Data Visualization & Reporting:</strong> Created actionable visualizations and compiled comprehensive reports that distilled complex statistical findings into accessible insights for stakeholders.</li>
-                    </ul>
-                </div>
-
-                <!-- Job 5 -->
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">DATA ENTRY CLERK</div>
-                            <div class="job-company">Mang'u Credit Union | Kiambu, Kenya</div>
-                        </div>
-                        <div class="job-date">March 2018 - Aug 2018</div>
-                    </div>
-                    <ul class="job-bullets">
-                        <li><strong>Data Accuracy & Compliance:</strong> Ensured 100% accuracy in financial data entry and maintained compliance with regulatory standards, reducing data errors by 15% through systematic audits.</li>
-                        <li><strong>Process Improvement:</strong> Identified and implemented efficiency improvements to data entry procedures, resulting in 10% increase in processing speed and operational effectiveness.</li>
-                    </ul>
-                </div>
+            <div class="template-card">
+                <h3>Modern Minimal</h3>
+                <p>Sleek and contemporary design with excellent readability for ATS and human reviewers.</p>
+                <ul class="template-features">
+                    <li>Clean, modern aesthetic</li>
+                    <li>Optimal white space</li>
+                    <li>Simple color accents</li>
+                    <li>Best for: Tech, Startups, Creative</li>
+                </ul>
+                <a href="templates/modern-minimal.html" download="ATS-Resume-Modern-Minimal.html" class="download-btn">Download Template</a>
             </div>
 
-            <!-- Technical Skills -->
-            <div class="section">
-                <h3 class="section-title">Technical Skills & Systems</h3>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Data & Analytics</h4>
-                        <p>Python, R, SQL, SPSS, SAS, Applied Statistics, Jupyter Notebook</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Visualization & Reporting</h4>
-                        <p>Tableau, ggplot2, matplotlib, Seaborn, Advanced Excel</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Business Systems</h4>
-                        <p>ERP Systems, IBM Watson Studio, Microsoft Office Suite</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Project Management</h4>
-                        <p>Asana, Git/GitHub, Process Automation Tools</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Cloud & Infrastructure</h4>
-                        <p>Google Cloud, AWS, Linux Terminal</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Core Capabilities</h4>
-                        <p>Financial Analysis, Payroll Processing, Compliance Management</p>
-                    </div>
-                </div>
+            <div class="template-card">
+                <h3>Executive Format</h3>
+                <p>Sophisticated template designed for senior-level positions and leadership roles.</p>
+                <ul class="template-features">
+                    <li>Professional summary emphasis</li>
+                    <li>Achievement-focused layout</li>
+                    <li>Executive presence</li>
+                    <li>Best for: C-Suite, Directors, VPs</li>
+                </ul>
+                <a href="templates/executive-format.html" download="ATS-Resume-Executive-Format.html" class="download-btn">Download Template</a>
             </div>
 
-            <!-- Education -->
-            <div class="section">
-                <h3 class="section-title">Education</h3>
-                <div class="education-item">
-                    <h4>Bachelor of Science in Applied Statistics with IT</h4>
-                    <p>Kaimosi Friends University | 2017 - 2023</p>
-                </div>
-                <div class="education-item">
-                    <h4>Kenya Certificate of Secondary Education</h4>
-                    <p>Karura SDA Secondary School | 2013 - 2015</p>
-                </div>
+            <div class="template-card">
+                <h3>Entry-Level Friendly</h3>
+                <p>Perfect for recent graduates and those starting their career journey.</p>
+                <ul class="template-features">
+                    <li>Education-first layout</li>
+                    <li>Skills prominence</li>
+                    <li>Projects & internships focus</li>
+                    <li>Best for: Students, Graduates, Career Changers</li>
+                </ul>
+                <a href="templates/entry-level.html" download="ATS-Resume-Entry-Level.html" class="download-btn">Download Template</a>
             </div>
+        </section>
 
-            <!-- Certifications -->
-            <div class="section">
-                <h3 class="section-title">Professional Certifications</h3>
-                <div class="cert-grid">
-                    <div class="cert-item">Data Fundamentals - IBM SkillsBuild (2024)</div>
-                    <div class="cert-item">Google Africa Developer Program - Google Cloud (2021)</div>
-                    <div class="cert-item">Auditing Awareness - SHEilds (2024)</div>
-                    <div class="cert-item">Health, Safety, Security & Environment (2023)</div>
-                    <div class="cert-item">Fire Management Systems - International Training Centre (2024)</div>
-                    <div class="cert-item">SEO Certification - Coursera (2021)</div>
-                </div>
+        <section class="usage-guide">
+            <h2>How to Use These Templates</h2>
+            <ol>
+                <li><strong>Download:</strong> Click the download button for your preferred template style</li>
+                <li><strong>Open:</strong> Open the HTML file in any text editor (Notepad, VS Code, Sublime Text, etc.)</li>
+                <li><strong>Edit:</strong> Replace all placeholder text in [BRACKETS] with your actual information</li>
+                <li><strong>Preview:</strong> Open the file in your web browser to see how it looks</li>
+                <li><strong>Save as PDF:</strong> Use your browser's "Print to PDF" function (Ctrl+P or Cmd+P)</li>
+                <li><strong>Submit:</strong> Upload your PDF to job applications or email directly</li>
+            </ol>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 ATS Resume Templates | Free for personal and commercial use</p>
+            <div class="contributors">
+                <p><strong>Contributors:</strong></p>
+                <p>Sylvia Maina - sylviahmaina6@gmail.com</p>
+                <p>John Gitau Mwangi - mwangijohngitau1@gmail.com</p>
             </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p>References available upon request</p>
-            <p class="availability">Available for immediate relocation | Open to regional opportunities including GCC markets</p>
-        </div>
+        </footer>
     </div>
 </body>
 </html>
