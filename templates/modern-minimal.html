@@ -1,1 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[YOUR NAME] - Resume</title>
+    <style>
+        /* Modern Minimal ATS-Friendly Resume */
+        /* Simple, clean design optimized for ATS parsing */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 70px;
+            background: #fff;
+        }
+
+        /* Header Section */
+        .header {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #2c3e50;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            color: #2c3e50;
+        }
+
+        .header .tagline {
+            font-size: 15px;
+            color: #7f8c8d;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 13px;
+            color: #7f8c8d;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-info .contact-item {
+            display: inline-block;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+            color: #2c3e50;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        /* Professional Summary */
+        .summary {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #34495e;
+        }
+
+        /* Experience & Education Items */
+        .item {
+            margin-bottom: 25px;
+        }
+
+        .item-header {
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .item-meta {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .item-meta .company {
+            font-weight: 500;
+            color: #34495e;
+        }
+
+        .item-meta .date {
+            font-style: italic;
+        }
+
+        .item-meta .separator {
+            margin: 0 8px;
+            color: #bdc3c7;
+        }
+
+        .item-description {
+            margin-left: 0;
+            font-size: 14px;
+            color: #34495e;
+        }
+
+        .item-description li {
+            margin-bottom: 8px;
+            margin-left: 20px;
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-group {
+            margin-bottom: 15px;
+        }
+
+        .skill-group-title {
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .skill-list {
+            font-size: 13px;
+            color: #34495e;
+            line-height: 1.7;
+        }
+
+        /* Certifications */
+        .cert-item {
+            margin-bottom: 12px;
+        }
+
+        .cert-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .cert-meta {
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 30px;
+                max-width: 100%;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .header {
+                border-bottom: 2px solid #2c3e50;
+            }
+        }
+
+        /* Instructions */
+        .instructions {
+            background: #fff9e6;
+            border: 2px dashed #f39c12;
+            padding: 20px;
+            margin-bottom: 35px;
+            font-size: 13px;
+            border-radius: 5px;
+        }
+
+        .instructions strong {
+            color: #e67e22;
+        }
+
+        .instructions ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .instructions li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- INSTRUCTIONS: Delete this entire section before finalizing -->
+    <div class="instructions">
+        <strong>📝 INSTRUCTIONS FOR USE:</strong>
+        <ul>
+            <li>Replace all text in [BRACKETS] with your actual information</li>
+            <li>Use Ctrl+F (Cmd+F on Mac) to quickly find all [BRACKETS]</li>
+            <li>Delete this yellow instruction box when you're done editing</li>
+            <li>To save as PDF: Press Ctrl+P (Cmd+P) and select "Save as PDF"</li>
+            <li>Keep descriptions concise and achievement-focused with metrics</li>
+        </ul>
+    </div>
+
+    <!-- HEADER / CONTACT INFORMATION -->
+    <header class="header">
+        <h1>[YOUR FULL NAME]</h1>
+        <div class="tagline">[Your Professional Title or Tagline]</div>
+        <div class="contact-info">
+            <span class="contact-item">[your.email@example.com]</span>
+            <span class="contact-item">[+1 (555) 123-4567]</span>
+            <span class="contact-item">[linkedin.com/in/yourprofile]</span>
+            <span class="contact-item">[City, State/Country]</span>
+        </div>
+    </header>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section class="section">
+        <h2 class="section-title">Profile</h2>
+        <p class="summary">
+            [Write 2-3 compelling sentences that summarize your professional identity, core expertise, and unique value proposition. 
+            Focus on what makes you stand out and what you can deliver. Example: "Creative Full-Stack Developer with 6+ years 
+            building scalable web applications. Specialized in React, Node.js, and cloud architecture with a track record of 
+            reducing load times by 60% and improving user engagement by 45%. Passionate about clean code and user-centric design."]
+        </p>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section class="section">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">[Job Title]</div>
+                <div class="item-meta">
+                    <span class="company">[Company Name]</span>
+                    <span class="separator">•</span>
+                    <span class="location">[City, State]</span>
+                    <span class="separator">•</span>
+                    <span class="date">[Start Date] - [End Date or "Present"]</span>
+                </div>
+            </div>
+            <ul class="item-description">
+                <li>[Quantifiable achievement with specific metrics. Example: "Architected microservices platform serving 1M+ daily users, reducing response time by 40%"]</li>
+                <li>[Key responsibility showing impact. Example: "Led agile team of 8 developers through complete product redesign, launching 3 weeks ahead of schedule"]</li>
+                <li>[Technical accomplishment. Example: "Implemented CI/CD pipeline reducing deployment time from 2 hours to 15 minutes"]</li>
+                <li>[Business impact. Example: "Optimized database queries resulting in $50K annual savings in cloud costs"]</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">[Previous Job Title]</div>
+                <div class="item-meta">
+                    <span class="company">[Company Name]</span>
+                    <span class="separator">•</span>
+                    <span class="location">[City, State]</span>
+                    <span class="separator">•</span>
+                    <span class="date">[Start Date] - [End Date]</span>
+                </div>
+            </div>
+            <ul class="item-description">
+                <li>[Achievement with measurable results and business impact]</li>
+                <li>[Key project or initiative you led or contributed to significantly]</li>
+                <li>[Technical or process improvement with quantifiable outcomes]</li>
+                <li>[Collaboration or leadership accomplishment]</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">[Earlier Job Title]</div>
+                <div class="item-meta">
+                    <span class="company">[Company Name]</span>
+                    <span class="separator">•</span>
+                    <span class="location">[City, State]</span>
+                    <span class="separator">•</span>
+                    <span class="date">[Start Date] - [End Date]</span>
+                </div>
+            </div>
+            <ul class="item-description">
+                <li>[Key accomplishment or responsibility]</li>
+                <li>[Another significant achievement]</li>
+                <li>[Relevant technical or business contribution]</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section">
+        <h2 class="section-title">Education</h2>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">[Degree Name], [Major/Field of Study]</div>
+                <div class="item-meta">
+                    <span class="company">[University Name]</span>
+                    <span class="separator">•</span>
+                    <span class="location">[City, State]</span>
+                    <span class="separator">•</span>
+                    <span class="date">[Graduation Year]</span>
+                </div>
+            </div>
+            <ul class="item-description">
+                <li>[Optional: Include if GPA is 3.5+ - "GPA: 3.8/4.0"]</li>
+                <li>[Optional: Relevant honors - "Dean's List (All Semesters), Summa Cum Laude"]</li>
+                <li>[Optional: Key coursework - "Relevant Coursework: Advanced Algorithms, AI/ML, Distributed Systems"]</li>
+            </ul>
+        </div>
+
+        <!-- Additional degree if applicable -->
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">[Additional Degree or Certification]</div>
+                <div class="item-meta">
+                    <span class="company">[Institution Name]</span>
+                    <span class="separator">•</span>
+                    <span class="date">[Year]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-container">
+            <div class="skill-group">
+                <div class="skill-group-title">[Category 1 - e.g., "Programming Languages"]</div>
+                <div class="skill-list">[Python, JavaScript, Java, C++, SQL, TypeScript]</div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-title">[Category 2 - e.g., "Frameworks & Libraries"]</div>
+                <div class="skill-list">[React, Node.js, Django, Express, Next.js, FastAPI]</div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-title">[Category 3 - e.g., "Tools & Technologies"]</div>
+                <div class="skill-list">[Git, Docker, Kubernetes, AWS, PostgreSQL, MongoDB]</div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-title">[Category 4 - e.g., "Professional Skills"]</div>
+                <div class="skill-list">[Agile/Scrum, Leadership, Technical Writing, Code Review]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS (Optional) -->
+    <section class="section">
+        <h2 class="section-title">Certifications</h2>
+        
+        <div class="cert-item">
+            <div class="cert-title">[Certification Name]</div>
+            <div class="cert-meta">[Issuing Organization] • [Year Obtained or "Valid through YYYY"]</div>
+        </div>
+
+        <div class="cert-item">
+            <div class="cert-title">[Another Certification]</div>
+            <div class="cert-meta">[Issuing Organization] • [Year Obtained]</div>
+        </div>
+
+        <div class="cert-item">
+            <div class="cert-title">[Third Certification]</div>
+            <div class="cert-meta">[Issuing Organization] • [Year Obtained]</div>
+        </div>
+    </section>
+
+    <!-- PROJECTS (Optional - especially good for tech/developer roles) -->
+    <!-- Uncomment this section if you want to include projects
+    <section class="section">
+        <h2 class="section-title">Notable Projects</h2>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">[Project Name]</div>
+                <div class="item-meta">
+                    <span class="date">[Date or Timeframe]</span>
+                </div>
+            </div>
+            <ul class="item-description">
+                <li>[Brief description of what the project does and your specific role]</li>
+                <li>[Technologies used and key technical challenges solved]</li>
+                <li>[Impact or results - users, performance metrics, or business value]</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">[Another Project]</div>
+                <div class="item-meta">
+                    <span class="date">[Date or Timeframe]</span>
+                </div>
+            </div>
+            <ul class="item-description">
+                <li>[Project description and your contribution]</li>
+                <li>[Technical stack and implementation details]</li>
+                <li>[Results or impact achieved]</li>
+            </ul>
+        </div>
+    </section>
+    -->
+
+</body>
+</html>
