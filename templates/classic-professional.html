@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Resume Builder</title>
+    <title>Classic Professional Resume - Edit & Download</title>
     <style>
         * {
             margin: 0;
@@ -32,6 +32,11 @@
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            color: #bbb;
         }
 
         .builder-layout {
@@ -95,11 +100,12 @@
             resize: vertical;
         }
 
-        .experience-item, .education-item {
+        .experience-item, .education-item, .cert-item {
             background: #f5f5f5;
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 15px;
+            position: relative;
         }
 
         .add-button, .remove-button {
@@ -116,10 +122,21 @@
             color: white;
         }
 
+        .add-button:hover {
+            background: #2a2a2a;
+        }
+
         .remove-button {
             background: #dc3545;
             color: white;
-            float: right;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            margin-top: 0;
+        }
+
+        .remove-button:hover {
+            background: #c82333;
         }
 
         .download-btn {
@@ -148,37 +165,40 @@
 
         #resume-preview .header {
             text-align: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
             border-bottom: 2px solid #333;
         }
 
         #resume-preview h1 {
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: bold;
             margin-bottom: 10px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         #resume-preview .contact-info {
-            font-size: 13px;
+            font-size: 14px;
             color: #555;
         }
 
         #resume-preview .section {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         #resume-preview .section-title {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             padding-bottom: 5px;
             border-bottom: 1px solid #333;
+            letter-spacing: 0.5px;
         }
 
         #resume-preview .item {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         #resume-preview .item-header {
@@ -189,28 +209,44 @@
 
         #resume-preview .item-title {
             font-weight: bold;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         #resume-preview .item-date {
             font-style: italic;
             color: #555;
-            font-size: 13px;
+            font-size: 14px;
         }
 
         #resume-preview .item-subtitle {
             font-style: italic;
             color: #555;
             margin-bottom: 8px;
-            font-size: 13px;
+            font-size: 14px;
         }
 
         #resume-preview ul {
             margin-left: 20px;
-            font-size: 13px;
+            font-size: 14px;
         }
 
         #resume-preview li {
+            margin-bottom: 6px;
+        }
+
+        #resume-preview .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        #resume-preview .skill-category {
+            flex: 1 1 45%;
+        }
+
+        #resume-preview .skill-category strong {
+            display: block;
             margin-bottom: 5px;
         }
 
@@ -229,7 +265,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>Interactive Resume Builder</h1>
+            <h1>Classic Professional Resume Builder</h1>
             <p>Fill out the form and watch your resume update in real-time!</p>
         </header>
 
@@ -285,12 +321,25 @@
                 <h2 style="margin-top: 30px;">Skills</h2>
                 <div class="form-group">
                     <label>Technical Skills</label>
-                    <input type="text" id="technicalSkills" placeholder="JavaScript, Python, React, etc.">
+                    <input type="text" id="technicalSkills" placeholder="JavaScript, Python, React, SQL, etc.">
+                </div>
+                <div class="form-group">
+                    <label>Tools & Technologies</label>
+                    <input type="text" id="toolsSkills" placeholder="Git, Docker, AWS, Jira, etc.">
                 </div>
                 <div class="form-group">
                     <label>Soft Skills</label>
-                    <input type="text" id="softSkills" placeholder="Leadership, Communication, etc.">
+                    <input type="text" id="softSkills" placeholder="Leadership, Communication, Problem Solving, etc.">
                 </div>
+                <div class="form-group">
+                    <label>Languages</label>
+                    <input type="text" id="languages" placeholder="English (Native), Spanish (Fluent), etc.">
+                </div>
+
+                <!-- Certifications -->
+                <h2 style="margin-top: 30px;">Certifications (Optional)</h2>
+                <div id="certification-container"></div>
+                <button class="add-button" onclick="addCertification()">+ Add Certification</button>
 
                 <button class="download-btn" onclick="downloadResume()">Download Resume as HTML</button>
             </div>
@@ -306,14 +355,13 @@
     <script>
         let experienceCount = 0;
         let educationCount = 0;
+        let certificationCount = 0;
 
-        // Initialize with one experience and education
         window.onload = function() {
             addExperience();
             addEducation();
             updatePreview();
 
-            // Add event listeners to all initial inputs
             document.querySelectorAll('input, textarea').forEach(input => {
                 input.addEventListener('input', updatePreview);
             });
@@ -329,7 +377,7 @@
                 <button class="remove-button" onclick="removeElement('exp-${experienceCount}')">Remove</button>
                 <div class="form-group">
                     <label>Job Title</label>
-                    <input type="text" class="exp-title" placeholder="Senior Developer">
+                    <input type="text" class="exp-title" placeholder="Senior Software Engineer">
                 </div>
                 <div class="form-group">
                     <label>Company</label>
@@ -341,20 +389,19 @@
                 </div>
                 <div class="form-group">
                     <label>Start Date</label>
-                    <input type="text" class="exp-start" placeholder="Jan 2020">
+                    <input type="text" class="exp-start" placeholder="January 2020">
                 </div>
                 <div class="form-group">
                     <label>End Date</label>
                     <input type="text" class="exp-end" placeholder="Present">
                 </div>
                 <div class="form-group">
-                    <label>Responsibilities (one per line)</label>
-                    <textarea class="exp-duties" placeholder="Led team of 5 developers&#10;Increased performance by 40%&#10;Implemented CI/CD pipeline"></textarea>
+                    <label>Key Achievements (one per line)</label>
+                    <textarea class="exp-duties" placeholder="Led team of 5 developers in building scalable web application&#10;Increased system performance by 40% through optimization&#10;Implemented CI/CD pipeline reducing deployment time by 60%&#10;Mentored 3 junior developers"></textarea>
                 </div>
             `;
             container.appendChild(expDiv);
 
-            // Add event listeners to new inputs
             expDiv.querySelectorAll('input, textarea').forEach(input => {
                 input.addEventListener('input', updatePreview);
             });
@@ -386,10 +433,44 @@
                     <label>Graduation Year</label>
                     <input type="text" class="edu-year" placeholder="2019">
                 </div>
+                <div class="form-group">
+                    <label>Additional Info (Optional)</label>
+                    <textarea class="edu-details" placeholder="GPA: 3.8/4.0&#10;Dean's List&#10;Relevant Coursework: Data Structures, Algorithms, Database Systems"></textarea>
+                </div>
             `;
             container.appendChild(eduDiv);
 
-            eduDiv.querySelectorAll('input').forEach(input => {
+            eduDiv.querySelectorAll('input, textarea').forEach(input => {
+                input.addEventListener('input', updatePreview);
+            });
+
+            updatePreview();
+        }
+
+        function addCertification() {
+            certificationCount++;
+            const container = document.getElementById('certification-container');
+            const certDiv = document.createElement('div');
+            certDiv.className = 'cert-item';
+            certDiv.id = `cert-${certificationCount}`;
+            certDiv.innerHTML = `
+                <button class="remove-button" onclick="removeElement('cert-${certificationCount}')">Remove</button>
+                <div class="form-group">
+                    <label>Certification Name</label>
+                    <input type="text" class="cert-name" placeholder="AWS Certified Solutions Architect">
+                </div>
+                <div class="form-group">
+                    <label>Issuing Organization</label>
+                    <input type="text" class="cert-org" placeholder="Amazon Web Services">
+                </div>
+                <div class="form-group">
+                    <label>Year Obtained</label>
+                    <input type="text" class="cert-year" placeholder="2023">
+                </div>
+            `;
+            container.appendChild(certDiv);
+
+            certDiv.querySelectorAll('input').forEach(input => {
                 input.addEventListener('input', updatePreview);
             });
 
@@ -452,7 +533,7 @@
                                 }
                             });
                         } else {
-                            html += '<li>[Your responsibilities]</li>';
+                            html += '<li>[Your achievements]</li>';
                         }
                         html += '</ul></div>';
                     }
@@ -469,6 +550,7 @@
                     const school = edu.querySelector('.edu-school').value;
                     const loc = edu.querySelector('.edu-location').value;
                     const year = edu.querySelector('.edu-year').value;
+                    const details = edu.querySelector('.edu-details').value;
 
                     if (degree || school) {
                         html += `
@@ -478,8 +560,17 @@
                                     <span class="item-date">${year || '[Year]'}</span>
                                 </div>
                                 <div class="item-subtitle">${school || '[School]'}, ${loc || '[Location]'}</div>
-                            </div>
                         `;
+                        if (details) {
+                            html += '<ul>';
+                            details.split('\n').forEach(detail => {
+                                if (detail.trim()) {
+                                    html += `<li>${detail}</li>`;
+                                }
+                            });
+                            html += '</ul>';
+                        }
+                        html += '</div>';
                     }
                 });
                 html += '</div>';
@@ -487,11 +578,40 @@
 
             // Skills
             const techSkills = document.getElementById('technicalSkills').value;
+            const toolsSkills = document.getElementById('toolsSkills').value;
             const softSkills = document.getElementById('softSkills').value;
-            if (techSkills || softSkills) {
-                html += '<div class="section"><div class="section-title">Skills</div>';
-                if (techSkills) html += `<p><strong>Technical:</strong> ${techSkills}</p>`;
-                if (softSkills) html += `<p><strong>Soft Skills:</strong> ${softSkills}</p>`;
+            const languages = document.getElementById('languages').value;
+
+            if (techSkills || toolsSkills || softSkills || languages) {
+                html += '<div class="section"><div class="section-title">Skills</div><div class="skills-list">';
+                if (techSkills) html += `<div class="skill-category"><strong>Technical Skills:</strong> ${techSkills}</div>`;
+                if (toolsSkills) html += `<div class="skill-category"><strong>Tools & Technologies:</strong> ${toolsSkills}</div>`;
+                if (softSkills) html += `<div class="skill-category"><strong>Soft Skills:</strong> ${softSkills}</div>`;
+                if (languages) html += `<div class="skill-category"><strong>Languages:</strong> ${languages}</div>`;
+                html += '</div></div>';
+            }
+
+            // Certifications
+            const certifications = document.querySelectorAll('.cert-item');
+            if (certifications.length > 0) {
+                html += '<div class="section"><div class="section-title">Certifications</div>';
+                certifications.forEach(cert => {
+                    const name = cert.querySelector('.cert-name').value;
+                    const org = cert.querySelector('.cert-org').value;
+                    const year = cert.querySelector('.cert-year').value;
+
+                    if (name || org) {
+                        html += `
+                            <div class="item">
+                                <div class="item-header">
+                                    <span class="item-title">${name || '[Certification]'}</span>
+                                    <span class="item-date">${year || '[Year]'}</span>
+                                </div>
+                                <div class="item-subtitle">${org || '[Organization]'}</div>
+                            </div>
+                        `;
+                    }
+                });
                 html += '</div>';
             }
 
@@ -525,32 +645,35 @@
         }
         .header {
             text-align: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
             border-bottom: 2px solid #333;
         }
         h1 {
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: bold;
             margin-bottom: 10px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .contact-info {
-            font-size: 13px;
+            font-size: 14px;
             color: #555;
         }
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .section-title {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             padding-bottom: 5px;
             border-bottom: 1px solid #333;
+            letter-spacing: 0.5px;
         }
         .item {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .item-header {
             display: flex;
@@ -559,24 +682,37 @@
         }
         .item-title {
             font-weight: bold;
-            font-size: 14px;
+            font-size: 15px;
         }
         .item-date {
             font-style: italic;
             color: #555;
-            font-size: 13px;
+            font-size: 14px;
         }
         .item-subtitle {
             font-style: italic;
             color: #555;
             margin-bottom: 8px;
-            font-size: 13px;
+            font-size: 14px;
         }
         ul {
             margin-left: 20px;
-            font-size: 13px;
+            font-size: 14px;
         }
         li {
+            margin-bottom: 6px;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 14px;
+        }
+        .skill-category {
+            flex: 1 1 45%;
+        }
+        .skill-category strong {
+            display: block;
             margin-bottom: 5px;
         }
         @media print {
@@ -595,7 +731,7 @@ ${previewContent}
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `${fullName.replace(/\s+/g, '_')}_Resume.html`;
+            a.download = `${fullName.replace(/\s+/g, '_')}_Resume_Classic.html`;
             a.click();
             URL.revokeObjectURL(url);
         }
